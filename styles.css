@@ -210,3 +210,8 @@ footer {
   transform: translateY(-2px);
   box-shadow: 0 12px 26px rgba(0,0,0,0.5);
 }
+/* Bloqueo de scroll cuando modal está activo */
+body.bp-no-scroll {
+  overflow: hidden;
+  touch-action: none;
+}
