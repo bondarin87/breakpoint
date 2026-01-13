@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BREAKPOINT | Interior Hard Reset</title>
+
+  <meta name="description" content="BREAKPOINT – Demolición interior selectiva. Retiro de cerámica, regatas y demolición controlada en Lima.">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- FONDO -->
+  <div class="bg-fixed"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>BREAKPOINT</h1>
+      <p class="tagline">Interior Hard Reset</p>
+
+      <p class="hero-text">
+        Quitamos lo viejo.<br>
+        Dejamos todo listo para empezar de nuevo.
+      </p>
+
+      <a href="#servicios" class="btn-primary">Ver servicios</a>
+    </div>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <h2>Qué hacemos</h2>
+
+    <ul>
+      <li>Retiro de revestimientos cerámicos en paredes y pisos</li>
+      <li>Demolición interior no estructural</li>
+      <li>Regatas para instalaciones eléctricas y sanitarias</li>
+      <li>Aperturas técnicas y nichos</li>
+      <li>Retiro y manejo de desmonte</li>
+    </ul>
+
+    <p class="nota">
+      Servicio exclusivo de demolición interior. No realizamos acabados.
+    </p>
+  </section>
+
+  <!-- DIFERENCIAL -->
+  <section class="dark">
+    <h2>Por qué BREAKPOINT</h2>
+
+    <ul>
+      <li>Demolición limpia y controlada</li>
+      <li>Herramienta profesional Bosch</li>
+      <li>Protección de áreas no intervenidas</li>
+      <li>Trabajo preciso y responsable</li>
+    </ul>
+  </section>
+
+  <!-- ZONA -->
+  <section>
+    <h2>Zona de atención</h2>
+    <p>
+      Miraflores · San Isidro · Surquillo · Barranco · San Borja<br>
+      <span class="nota">Otros distritos se evalúan según el tipo de trabajo.</span>
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>¿Listo para reiniciar tu espacio?</h2>
+    <a
+  href="https://wa.me/51936276938?text=Hola,%20quiero%20información%20sobre%20sus%20servicios%20de%20demolición%20interior."
+  target="_blank"
+  rel="noopener"
+  class="btn-primary"
+>
+  Contáctanos
+</a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>BREAKPOINT</p>
+    <p>Demolición interior selectiva</p>
+    <p>Lima · Perú</p>
+  </footer>
+  <!-- BOTÓN CALCULADORA -->
+<button class="bp-calc-btn" id="bpOpenCalc">
+  Estimador de costos
+</button>
+
+<!-- OVERLAY -->
+<div class="bp-calc-overlay" id="bpCalcOverlay">
+
+  <div class="bp-calc-modal">
+
+    <button class="bp-calc-close" id="bpCloseCalc">✕</button>
+
+    <h2>Calculadora de demolición</h2>
+
+    <label>Retiro de revestimiento – pared (m²)</label>
+    <input type="number" id="bpPared" min="0">
+
+    <label>Retiro de revestimiento – piso (m²)</label>
+    <input type="number" id="bpPiso" min="0">
+
+    <label>Demolición interior selectiva (m³)</label>
+    <input type="number" id="bpDemolicion" min="0" step="0.01">
+
+    <label>Regatas eléctricas / sanitarias (ml)</label>
+    <input type="number" id="bpRegatas" min="0">
+
+    <div class="bp-calc-result">
+      <p>Sacos de desmonte estimados: <strong id="bpSacos">—</strong></p>
+      <p class="bp-total">Total estimado: <strong id="bpTotal">—</strong></p>
+    </div>
+
+    <small>
+      Precio referencial. Sujeto a evaluación técnica en obra.
+    </small>
+
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
