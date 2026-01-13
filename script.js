@@ -1,5 +1,6 @@
 // JS mínimo por ahora (estructura lista para crecer)
 console.log("BREAKPOINT listo.");
+
 // ===== BREAKPOINT CALCULADORA =====
 (() => {
 
@@ -9,17 +10,25 @@ console.log("BREAKPOINT listo.");
 
   if (!openBtn || !overlay) return;
 
+  // ABRIR CALCULADORA
   openBtn.addEventListener("click", () => {
     overlay.classList.add("active");
+    document.body.classList.add("bp-no-scroll");
   });
 
-  closeBtn.addEventListener("click", () => {
-    overlay.classList.remove("active");
-  });
+  // CERRAR CON BOTÓN ✕
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      overlay.classList.remove("active");
+      document.body.classList.remove("bp-no-scroll");
+    });
+  }
 
+  // CERRAR AL HACER CLICK FUERA
   overlay.addEventListener("click", e => {
     if (e.target === overlay) {
       overlay.classList.remove("active");
+      document.body.classList.remove("bp-no-scroll");
     }
   });
 
@@ -43,38 +52,36 @@ console.log("BREAKPOINT listo.");
     if (el) el.addEventListener("input", calcular);
   });
 
- function calcular() {
-  const pared = +document.getElementById("bpPared").value || 0;
-  const piso = +document.getElementById("bpPiso").value || 0;
-  const demol = +document.getElementById("bpDemolicion").value || 0;
-  const regatas = +document.getElementById("bpRegatas").value || 0;
+  function calcular() {
+    const pared = +document.getElementById("bpPared").value || 0;
+    const piso = +document.getElementById("bpPiso").value || 0;
+    const demol = +document.getElementById("bpDemolicion").value || 0;
+    const regatas = +document.getElementById("bpRegatas").value || 0;
 
-  // PRECIOS
-  const precioServicios =
-    pared * 50 +
-    piso * 40 +
-    demol * 2300 +
-    regatas * 45;
+    // PRECIOS
+    const precioServicios =
+      pared * 50 +
+      piso * 40 +
+      demol * 2300 +
+      regatas * 45;
 
-  // SACOS (REGLAS REALES)
-  const sacosPared = pared * 2;
-  const sacosPiso = piso * 2;
-  const sacosDemol = demol * 50;
-  const sacosRegatas = Math.ceil(regatas / 7);
+    // SACOS (REGLAS REALES)
+    const sacosPared = pared * 2;
+    const sacosPiso = piso * 2;
+    const sacosDemol = demol * 50;
+    const sacosRegatas = Math.ceil(regatas / 7);
 
-  const totalSacos =
-    sacosPared +
-    sacosPiso +
-    sacosDemol +
-    sacosRegatas;
+    const totalSacos =
+      sacosPared +
+      sacosPiso +
+      sacosDemol +
+      sacosRegatas;
 
-  const costoDesmonte = totalSacos * 8;
+    const costoDesmonte = totalSacos * 8;
+    const total = precioServicios + costoDesmonte;
 
-  const total = precioServicios + costoDesmonte;
-
-  document.getElementById("bpSacos").textContent = totalSacos;
-  document.getElementById("bpTotal").textContent = `S/ ${total.toFixed(0)}`;
-}
-
+    document.getElementById("bpSacos").textContent = totalSacos;
+    document.getElementById("bpTotal").textContent = `S/ ${total.toFixed(0)}`;
+  }
 
 })();
